@@ -125,15 +125,38 @@ python scripts/transcribe_and_detect.py --audio data/sample_scam_call.mp3
 ```
 
 ### 5. Launch the Interactive Gradio Web App
-Starts the dual-tab web application for text analysis and audio recording transcription + fraud detection:
+Starts the triple-tab web application (SMS Detection, Audio Call Detection, and Currency Verification):
 
 ```bash
 python app.py
 ```
 Open your browser at `http://127.0.0.1:7860`.
 
+### 6. Train the Indian Currency Verifier (MobileNetV3)
+Trains the transfer-learning CNN model to identify genuine vs. counterfeit Indian banknotes:
+
+```bash
+python scripts/train_currency_verifier.py
+```
+
+### 7. Evaluate the Currency Verifier
+Evaluates the trained MobileNetV3 model on held-out validation notes and reports Accuracy, Precision, Recall, F1, and Confusion Matrix:
+
+```bash
+python scripts/evaluate_currency.py
+```
+
+### 8. Verify Currency Note via CLI
+Classifies a note photo directly from the command line:
+
+```bash
+python scripts/verify_currency.py --image path/to/banknote.jpg
+```
+
 ---
 
 ## 📊 Datasets Used
 - **ICFD-31k**: Indian Conversational Fraud Dataset (`rishia2220/icfd-31k`) containing authentic and subtle conversational scam transcripts and normal calls.
 - **Scam-Ham-India**: Indian context scam and legitimate SMS dataset (`anmolshrivastav/scam-ham-india`).
+- **Indian Currency Notes Dataset**: Image dataset of genuine and counterfeit banknotes (`devanandjoly/indian-currency-images-for-fake-currency-detection`) containing 3,960 high-resolution images across ₹100, ₹200, and ₹500 denominations, organized into `train/genuine`, `train/counterfeit`, `val/genuine`, and `val/counterfeit`.
+

@@ -1,0 +1,14 @@
+{
+  "name": "Scam Shield",
+  "short_name": "ScamShield",
+  "description": "AI-assisted scam detection for messages, phone calls, and counterfeit currency.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#4f46e5",
+  "background_color": "#fafafa",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

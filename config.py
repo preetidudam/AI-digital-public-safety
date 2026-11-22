@@ -28,6 +28,14 @@ DEEPFAKE_AUDIO_MODEL_ID = "Vansh180/deepfake-audio-wav2vec2"
 # Whisper Speech-to-Text Model
 WHISPER_MODEL_NAME = "small"
 
+# Currency Verifier Configuration
+CURRENCY_DATASET_DIR = DATA_DIR / "currency_dataset"
+CURRENCY_MODEL_PATH = MODELS_DIR / "currency_verifier.pt"
+CURRENCY_IMAGE_SIZE = (224, 224)
+CURRENCY_CLASSES = ["Counterfeit", "Genuine"]
+CURRENCY_CLASS_TO_IDX = {"Counterfeit": 0, "Genuine": 1}
+CURRENCY_IDX_TO_CLASS = {0: "Counterfeit", 1: "Genuine"}
+
 # Sample Audio Path
 DEFAULT_SAMPLE_AUDIO_PATH = DATA_DIR / "sample_scam_call.mp3"
 

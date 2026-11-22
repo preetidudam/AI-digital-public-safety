@@ -44,3 +44,7 @@ outputs/
 # OS generated
 .DS_Store
 Thumbs.db
+
+# Large data
+data/currency_dataset/
+*.mp3
